@@ -4,6 +4,43 @@ import wifi from '../assets/icons/wifi.png'
 import lamp from '../assets/icons/lamp.png'
 import energy from '../assets/icons/energy.png'
 
+function DropDown({ text }) {
+
+    const [open, setOpen] = useState(false);
+
+    function handleMouseEnter() {
+        setOpen(true);
+    }
+
+    function handleMouseLeave() {
+        setTimeout(() => {
+            setOpen(false);
+        }, 200);
+    }
+
+    return (
+        <div className='absolute'>
+            <button
+                className=''
+                onMouseEnter={handleMouseEnter} 
+                onMouseLeave={handleMouseLeave}
+            // onClick={() => setOpen((event) => !event)}
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                </svg>
+            </button>
+            {open && (
+                <div className='bg-white border w-[145px] h-[78px] rounded p-1 absolute bottom-full'>
+                    <p className='text-xs break-words'>
+                        {text}
+                    </p>
+                </div>
+            )}
+        </div>
+    );
+}
+
 function SubForm() {
 
     const [openProfile, setOpenProfile] = useState(false);
@@ -17,7 +54,7 @@ function SubForm() {
                 </button>
             </div>
             {/* {openProfile && ( */}
-                <div className=' mt-44 rounded bg-black bg-opacity-10 w-80'>
+                <div className=' mt-56 rounded bg-black bg-opacity-20 w-80'>
                     <div className='text-sm py-4 px-2 cursor-pointer rounded flex flex-col gap-4'>
                         <div className='flex justify-between items-center'>
                             <p className='font-bold text-sm'>Genset</p>
@@ -25,23 +62,29 @@ function SubForm() {
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <div className='flex flex-col gap-2 p-3 bg-white rounded-md'>
+                        <div className='flex flex-col gap-4 p-6 bg-white rounded-md'>
                             <div className='flex flex-col items-center'>
-                                <p>Lorem ipsum dolor sit amet ipsum dolor sit amet</p>
-                                <p>Lorem ipsum dolor sit amet ipsum dolor sit amet</p>
+                                <p>Lorem ipsum dolor sit amet ipsum dolor</p>
+                                <p>Lorem ipsum dolor sit amet ipsum dolor</p>
                             </div>
-                            <div className='flex flex-col gap-2 bg-slate-400 p-4'>
-                                <div className='flex justify-between'>
-                                    <p className='flex items-center gap-1'>Genset <p className='text-xs'>Pré-acheminement</p></p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                                    </svg>
+                            <div className='flex flex-col gap-2'>
+                                <div className='flex gap-16'>
+                                    <p className='flex items-center gap-1 font-semibold'>Genset <p className='text-xs'>Pré-acheminement</p></p>
+                                    <div className='flex text-xs gap-1'>
+                                        <p className='text-green-500 font-semibold'>OUI</p>
+                                        <div className='relative'>
+                                            <DropDown text={'When the countdown is finished, the system will automatically move to the next question.'} />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='flex justify-between'>
-                                    <p className='flex items-center gap-1'>Genset <p className='text-xs'>Post-acheminement</p></p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                                    </svg>
+                                <div className='flex gap-14'>
+                                    <p className='flex items-center gap-1 font-semibold'>Genset <p className='text-xs'>Post-acheminement</p></p>
+                                    <div className='flex text-xs gap-1'>
+                                        <p className='text-red-500 font-semibold'>NON</p>
+                                        <div className='relative'>
+                                            <DropDown text={'When the countdown is finished, the system will automatically move to the next question.'} />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
