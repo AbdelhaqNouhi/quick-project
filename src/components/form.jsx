@@ -1,8 +1,59 @@
-import React from 'react'
 import { useState } from 'react'
 import wifi from '../assets/icons/wifi.png'
 import lamp from '../assets/icons/lamp.png'
 import energy from '../assets/icons/energy.png'
+import { motion } from 'framer-motion';
+// import '../../public/styles.css'
+
+function ScrollText() {
+    const animationStyles = `
+        @keyframes scrollText {
+            0% {
+            transform: translateX(0%);
+            }
+            100% {
+            transform: translateX(-100%);
+            }
+        }
+    `;
+
+    const content = (
+        <div className='flex p-4 w-full gap-8'>
+            <div className='flex flex-col'>
+                <label className='text-sm'>N° Container</label>
+                <p className='font-bold text-sm'>C2122-000734</p>
+            </div>
+            <div className='flex flex-col'>
+                <label className='text-sm'>C2122-000734</label>
+                <p className='font-bold text-sm'>P2122-87996</p>
+            </div>
+            <div className='flex flex-col'>
+                <label className='text-sm'>40P FRIG</label>
+                <p className='text-sm'>Mandarine</p>
+            </div>
+            <div className='flex flex-col'>
+                <label className='text-sm'>Statut</label>
+                <p className='font-bold text-sm'>Lorem ipsum dolor...</p>
+            </div>
+        </div>
+    );
+
+    return (
+        <div className="w-full overflow-hidden">
+            <style>{animationStyles}</style>
+            <motion.span
+                className="inline-block"
+                style={{
+                    whiteSpace: 'nowrap',
+                    paddingLeft: '100%',
+                    animation: `scrollText ${content.props.children.length * 2.5}s linear infinite`,
+                }}
+            >
+                {content}
+            </motion.span>
+        </div>
+    );
+}
 
 function DropDown() {
 
@@ -68,6 +119,8 @@ function SubForm() {
                             <div className='flex flex-col items-center'>
                                 <p>Lorem ipsum dolor sit amet ipsum dolor</p>
                                 <p>Lorem ipsum dolor sit amet ipsum dolor</p>
+                                <h1>Scrolling Text Animation</h1>
+                                <ScrollText />
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <div className='flex gap-16'>
