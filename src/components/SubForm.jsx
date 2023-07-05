@@ -12,6 +12,17 @@ const SubForm = () => {
     const [openSubForm, setOpenSubForm] = useState(false);
     const [openEditForm, setOpenEditForm] = useState(false);
 
+    const [isGreen, setIsGreen] = useState(false);
+    const [isRed, setIsRed] = useState(false);
+
+    const handleGreen = () => {
+        setIsGreen(!isGreen);
+    };
+
+    const handelRed = () => {
+        setIsRed(!isRed);
+    };
+
     const handelClick = () => {
         setOpenSubForm((event) => !event);
         setOpenEditForm((event) => !event);
@@ -92,29 +103,63 @@ const SubForm = () => {
             )}
 
             {openEditForm && (
-                <>
-                    <div className='rounded bg-white w-80 absolute'>
-                        <div className='text-sm py-4 px-4 cursor-pointer rounded flex flex-col gap-4'>
-                            <div className='flex justify-between items-center'>
-                                <p className='font-bold text-sm'>Genset</p>
-                                <button onClick={() => setOpenEditForm((event) => !event)} >
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className='flex flex-col gap-4 bg-white rounded-md'>
-                                <div className='flex flex-col gap-2'>
-                                    <h1 className='font-semibold'>Lorem ipsum dolor</h1>
-                                    <input className='rounded p-2 border-2' type="text" placeholder='Lorem ipsum...' />
+                <div className='rounded bg-white w-80 absolute'>
+                    <div className='text-sm py-4 px-4 cursor-pointer rounded flex flex-col gap-4'>
+                        <div className='flex justify-between items-center'>
+                            <p className='font-bold text-sm'>Genset</p>
+                            <button onClick={() => setOpenEditForm((event) => !event)} >
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div className='flex flex-col gap-6 bg-white rounded-md'>
+                            <div className='flex flex-col gap-5'>
+                                <h1 className='font-semibold'>Lieu de chargement</h1>
+                                <div className='flex'>
+                                    <select name="fruit" id="fruit-select" className='p-2 bg-black text-white w-full'>
+                                        <option value="apple">Site</option>
+                                        <option value="banana">Site</option>
+                                        <option value="orange">Site</option>
+                                    </select>
+                                    <input className='rounded p-2 border-2' type="text" placeholder='mot clé' />
                                 </div>
-                                <button className='bg-blue-500 p-2 rounded'>
-                                    OK
-                                </button>
+                                <div className='flex'>
+                                    <div class="relative w-1/2">
+                                        <p className='py-1'>Date</p>
+                                        <input type="date" placeholder="Select a date" class="py-2 rounded-lg border border-gray-300 focus:outline-none flex justify-between appearance-none" />
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <p className='py-1'> Genset </p>
+                                        <div>
+                                            <div className='flex border p-0.5 gap-1 items-center'>
+                                                <button
+                                                    className={`p-2 rounded font-medium ${isGreen ? 'bg-green-500' : ''}`}
+                                                    onClick={ handleGreen }
+                                                >
+                                                    Oui
+                                                </button>
+                                                <button
+                                                    className={`p-2 rounded font-medium ${isRed ? 'bg-red-500' : ''}`}
+                                                    onClick={ handelRed }
+                                                >
+                                                    Oui
+                                                </button>
+                                                <img className='w-6 h-6 rounded-full ml-auto' src={energy} alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <button
+                                onClick={() => setOpenEditForm((event) => !event)}
+                                className='bg-blue-500 p-2 rounded transition duration-500 ease-in-out hover:bg-blue-600'
+                            >
+                                GO...
+                            </button>
                         </div>
                     </div>
-                </>
+                </div>
             )}
         </div>
     );
