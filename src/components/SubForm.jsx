@@ -16,10 +16,16 @@ const SubForm = () => {
     const [isRed, setIsRed] = useState(false);
 
     const handleGreen = () => {
+        if (isRed) {
+            setIsRed(!isRed);
+        }
         setIsGreen(!isGreen);
     };
 
     const handelRed = () => {
+        if (isGreen) {
+            setIsGreen(!isGreen);
+        }
         setIsRed(!isRed);
     };
 
@@ -153,7 +159,7 @@ const SubForm = () => {
                             </div>
                             <button
                                 onClick={() => setOpenEditForm((event) => !event)}
-                                className='bg-blue-500 p-2 rounded transition duration-500 ease-in-out hover:bg-blue-600'
+                                className="bg-blue-500 text-white hover:scale-105 duration-300 py-2 px-5 rounded hover:bg-blue-950 font-semibold"
                             >
                                 GO...
                             </button>
