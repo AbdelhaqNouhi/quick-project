@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const DropDown = () => {
+const DropDown = ({ onClick }) => {
 
     const [open, setOpen] = useState(false);
 
@@ -19,6 +19,7 @@ const DropDown = () => {
         <div className='absolute'>
             <button
                 className=''
+                onClick={ onClick }
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             // onClick={() => setOpen((event) => !event)}
