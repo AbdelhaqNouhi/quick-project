@@ -8,6 +8,27 @@ const SubForm = () => {
 
     const [openSubForm, setOpenSubForm] = useState(false);
 
+    const AnimationContent = (
+        <div className='flex w-full gap-8'>
+            <div className='flex flex-col'>
+                <label className='text-sm font-semibold'>N° Container</label>
+                <p className='text-xs'>C2122-000734</p>
+            </div>
+            <div className='flex flex-col'>
+                <label className='text-sm font-semibold'>C2122-000734</label>
+                <p className='text-xs'>P2122-87996</p>
+            </div>
+            <div className='flex flex-col'>
+                <label className='text-sm font-semibold'>40P FRIG</label>
+                <p className='text-xs'>Mandarine</p>
+            </div>
+            <div className='flex flex-col'>
+                <label className='text-sm font-semibold'>Statut</label>
+                <p className='text-xs'>Lorem ipsum dolor...</p>
+            </div>
+        </div>
+    );
+
     return (
         <div className='flex items-center absolute'>
             <div>
@@ -29,7 +50,7 @@ const SubForm = () => {
                         </div>
                         <div className='flex flex-col gap-4 p-6 bg-white rounded-md'>
                             <div className='flex flex-col items-center'>
-                                <ScrollText />
+                                <ScrollText content={ AnimationContent } />
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <div className='flex gap-16'>

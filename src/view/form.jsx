@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import wifi from '../assets/icons/wifi.png'
 import lamp from '../assets/icons/lamp.png'
 import SubForm from '../components/SubForm';
@@ -146,6 +146,14 @@ import SubForm from '../components/SubForm';
 // };
 
 function form () {
+
+    const [isHovered, setIsHovered] = useState(false);
+
+    const animationStyles = {
+        transition: 'transform 0.50s',
+        transform: isHovered ? 'translateX(-20%)' : 'none',
+    };
+
     return (
         <div className="py-16 px-96 w-full bg-gray-100 flex flex-col gap-4 items-center">
             <div className='bg-white shadow-md p-4 rounded flex flex-col gap-5 w-10/12'>
@@ -177,7 +185,16 @@ function form () {
                         </div>
                         <p className='text-xs'>15 juin</p>
                         <p>..................................................</p>
-                        <h1 className='text-sm font-semibold'>SAINT PETERSBURG</h1>
+                        <div className='overflow-auto overflow-x-hidden whitespace-nowrap w-1/3 mx-2'>
+                            <h1
+                                className="text-sm font-semibold"
+                                style={animationStyles}
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                            >
+                                SAINT PETERSBURG.........
+                            </h1>
+                        </div>
                     </div>
                     <button className='px-5 py-1 bg-green-500 rounded items-center text-sm text-white'>Approuvez</button>
                 </div>

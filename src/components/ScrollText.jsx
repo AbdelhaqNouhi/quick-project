@@ -1,8 +1,19 @@
 import React from 'react'
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 
-const ScrollText = () => {
+const ScrollText = ({ content, onMouseEnter, onMouseleave }) => {
+
+    const [isHover, setIsHover] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHover(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHover(false);
+    };
 
     const animationStyles = `
         @keyframes scrollText {
@@ -15,27 +26,6 @@ const ScrollText = () => {
         }
     `;
 
-    const content = (
-        <div className='flex w-full gap-8'>
-            <div className='flex flex-col'>
-                <label className='text-sm font-semibold'>N° Container</label>
-                <p className='text-xs'>C2122-000734</p>
-            </div>
-            <div className='flex flex-col'>
-                <label className='text-sm font-semibold'>C2122-000734</label>
-                <p className='text-xs'>P2122-87996</p>
-            </div>
-            <div className='flex flex-col'>
-                <label className='text-sm font-semibold'>40P FRIG</label>
-                <p className='text-xs'>Mandarine</p>
-            </div>
-            <div className='flex flex-col'>
-                <label className='text-sm font-semibold'>Statut</label>
-                <p className='text-xs'>Lorem ipsum dolor...</p>
-            </div>
-        </div>
-    );
-
     return (
         <div className="w-full overflow-hidden">
             <style>{animationStyles}</style>
@@ -44,7 +34,7 @@ const ScrollText = () => {
                 style={{
                     whiteSpace: 'nowrap',
                     paddingLeft: '100%',
-                    animation: `scrollText ${content.props.children.length * 2.5}s linear infinite`,
+                    animation: `scrollText ${content.props.children.length * 3.5}s linear infinite`,
                 }}
             >
                 {content}
