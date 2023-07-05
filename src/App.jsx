@@ -1,7 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Form from "./components/form"
-import ErrorPage from "./pages/ErrorPage"
+import Form from "./view/form"
+import ErrorPage from "./components/ErrorPage"
 
 function App() {
 
