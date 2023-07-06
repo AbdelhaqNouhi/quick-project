@@ -149,7 +149,7 @@ const SubForm = () => {
                                                     className={`p-2 rounded font-medium ${isRed ? 'bg-red-500' : ''}`}
                                                     onClick={ handelRed }
                                                 >
-                                                    Oui
+                                                    Non
                                                 </button>
                                                 <img className='w-6 h-6 rounded-full ml-auto' src={energy} alt="" />
                                             </div>
