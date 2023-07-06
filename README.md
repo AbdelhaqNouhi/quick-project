@@ -35,8 +35,7 @@ This project is a simple app that showcases a form with various features such as
     Tailwind CSS
 
 **OverView**
-<video src="./public/screen/screen.mp4" controls="controls" style="max-width: 730px;">
-</video>
+[![Video](./public/screen/Screenshot%202023-07-06%20094219.png)](./public/screen/screen.mp4)
 
 ## Authors
 
