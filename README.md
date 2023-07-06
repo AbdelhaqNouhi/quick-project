@@ -3,21 +3,20 @@ This project is a simple app that showcases a form with various features such as
 
 ## Installation
 
-    Clone the repository: 
+### Clone the repository: 
 ```bash
     git clone [repository URL]
 ```
 
-    Navigate to the project directory: 
+### Navigate to the project directory: 
 ```bash
     cd [project directory]
 ```
 
-    Install dependencies:
+### Install dependencies:
 ```bash
     npm install
 ```
-
 
 ## Usage
 
