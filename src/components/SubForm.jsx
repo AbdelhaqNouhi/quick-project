@@ -69,7 +69,7 @@ const SubForm = () => {
                 </button>
             </div>
             {openSubForm && (
-                <div className=' mt-56 rounded bg-black bg-opacity-20 w-80'>
+                <div className=' mt-56 rounded bg-black bg-opacity-20 w-80 max-sm:w-64'>
                     <div className='text-sm py-4 px-2 cursor-pointer rounded flex flex-col gap-4'>
                         <div className='flex justify-between items-center'>
                             <p className='font-bold text-sm'>Genset</p>
@@ -79,12 +79,12 @@ const SubForm = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className='flex flex-col gap-4 p-6 bg-white rounded-md'>
+                        <div className='flex flex-col gap-4 p-6 max-sm:p-3 bg-white rounded-md'>
                             <div className='flex flex-col items-center'>
                                 <ScrollText content={ AnimationContent } />
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <div className='flex gap-16'>
+                                <div className='flex gap-16 max-sm:gap-7'>
                                     <p className='flex items-center gap-1 font-semibold'>Genset <p className='text-xs'>Pré-acheminement</p></p>
                                     <div className='flex text-xs gap-1'>
                                         <p className='text-green-500 font-semibold'>OUI</p>
@@ -93,7 +93,7 @@ const SubForm = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='flex gap-14'>
+                                <div className='flex gap-14 max-sm:gap-5'>
                                     <p className='flex items-center gap-1 font-semibold'>Genset <p className='text-xs'>Post-acheminement</p></p>
                                     <div className='flex text-xs gap-1'>
                                         <p className='text-red-500 font-semibold'>NON</p>

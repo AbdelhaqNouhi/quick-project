@@ -155,9 +155,9 @@ function form () {
     };
 
     return (
-        <div className="py-16 px-96 w-full bg-gray-100 flex flex-col gap-4 items-center">
-            <div className='bg-white shadow-md p-4 rounded flex flex-col gap-5 w-10/12'>
-                <div className='flex justify-between'>
+        <div className="py-16 lg:px-96 w-full bg-gray-100 flex flex-col gap-4 items-center">
+            <div className='bg-white shadow-md p-4 rounded flex flex-col gap-5 md:w-10/12'>
+                <div className='flex md:justify-between'>
                     <div className='flex flex-col gap-1'>
                         <labe className='text-sm'>N° Booking</labe>
                         <p className='font-bold text-sm'>C2122-000734</p>
@@ -175,7 +175,7 @@ function form () {
                         <p className='font-bold text-sm'>Booking Envoyé</p>
                     </div>
                 </div>
-                <div className='flex justify-between gap-12'>
+                <div className='flex max-sm:flex-col gap-4 justify-between'>
                     <div className='flex justify-between gap-1 items-center'>
                         <div className='flex gap-1 items-center'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -199,7 +199,7 @@ function form () {
                     <button className='px-5 py-1 bg-green-500 rounded items-center text-sm text-white'>Approuvez</button>
                 </div>
             </div>
-            <div className=' bg-white shadow-md rounded flex flex-col w-9/12 ml-16'>
+            <div className=' bg-white shadow-md rounded flex flex-col w-9/12 max-sm:w-full md:ml-16'>
                 <div className='flex justify-between p-4'>
                     <div className='flex flex-col'>
                         <labe className='text-sm'>N° Container</labe>
