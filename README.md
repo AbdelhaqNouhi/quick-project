@@ -5,12 +5,12 @@ This project is a simple app that showcases a form with various features such as
 
 #### Clone the repository: 
 ```bash
-    git clone [repository URL]
+    git clone https://github.com/AbdelhaqNouhi/quick-project.git
 ```
 
 #### Navigate to the project directory: 
 ```bash
-    cd [project directory]
+    cd quick-project
 ```
 
 #### Install dependencies:
