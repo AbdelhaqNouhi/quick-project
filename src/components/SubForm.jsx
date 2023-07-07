@@ -79,8 +79,7 @@ const SubForm = () => {
                                 </svg>
                             </button>
                         </div>
-                        <div className='flex flex-col gap-4 p-6 max-sm:p-3 bg-white rounded-md'>
-                            <div className='flex flex-col items-center'>
+                        <div className='flex flex-col gap-4 p-6 max-sm:p-3 bg-white rounded-md'> <div className='flex flex-col items-center'>
                                 <ScrollText content={ AnimationContent } />
                             </div>
                             <div className='flex flex-col gap-2'>
@@ -98,7 +97,7 @@ const SubForm = () => {
                                     <div className='flex text-xs gap-1'>
                                         <p className='text-red-500 font-semibold'>NON</p>
                                         <div className='relative'>
-                                            <DropDown />
+                                            <DropDown onClick={handelClick} />
                                         </div>
                                     </div>
                                 </div>
